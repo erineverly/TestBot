@@ -16,3 +16,13 @@ while True:
             response = event.text.lower()
             if response == "беседа":
                 vk_session.method("message.send", {"user_id": event.user_id, "message": "Заполни анкету", "random_id": randint})
+            elif response == "трусики":
+                attachment = get_pictures.get_pic(vk_session, -114176876, session_api)
+                vk_session.method("messages.send",
+                                      {"user_id": event.user_id, "message": "Ну, держи!",
+                                       "random_id": randint(-2147483648, +2147483648), "attachment": attachment})
+            else:
+                vk_session.method("messages.send",
+                                      {"user_id": event.user_id, "message": "Ожидайте ответа администратора!",
+                                       "random_id": randint(-2147483648, +2147483648)})
+ 
