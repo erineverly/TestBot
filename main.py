@@ -2,6 +2,8 @@ from vk_api.longpoll import VkLongPoll, VkEventType
 import vk_api
 from datetime import datetime
 from random import randint
+import get_pictures
+
 token = "d2b30d2d8194414bb292d20b02c797b11f72fbed397bedebf628c103e8ea762a35e4a586cfa5be7c7da31"
 vk_session = vk_api.VkApi(token=token)
 session_api = vk_session.get_api()
